@@ -17,7 +17,7 @@ def current_inventory():
 @app.route('/post', methods=['POST'])
 def postMessage():
     message = request.form['msg']
-    piname = request.form['name']
+    piname = 'daniel'
     wii.new_message(message, piname)
     return json.dumps(message)
 
@@ -41,4 +41,4 @@ def getHistory():
                     #message = message.decode("utf-8")
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run('0.0.0.0',port=5000)
