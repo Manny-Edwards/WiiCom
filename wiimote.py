@@ -13,6 +13,8 @@ def getTranslation():
 
  print ('Wiimote connection established!\n')
  print ('Go ahead and press some buttons\n')
+ print ('Press A to input dash and B to input dot.\n')
+ print ('press down to save inputs (saves a maximum of 4 characters at a time).\n')
  print ('Press PLUS and MINUS together to disconnect and quit.\n')
 
  time.sleep(3)
