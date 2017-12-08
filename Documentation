@@ -1,0 +1,53 @@
+openapi: 3.0.0
+info: 
+  title: Wiimote API
+  description: This is an API for CSCI 298 during the Fall 2017 semester. It allows users to communicate between another wiimote using the rumble function.
+  version: 0.1.0
+paths:
+  /post:
+    post:
+      summary: Send a list of start/stop commands to the API.
+      description: Allows the user to input commands into the Wiimote and have those commands be sent to the API.
+        The return type is a JSON array of start/stop commands represented as a list.
+      responses:
+        '200':
+          description: A JSON array of start/stop commands represented as a list.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: The translated message that was send to the API.
+                  piname:
+                    type: string
+                    description: The name of the pi the message was sent from.
+                example:
+                  'Hello' : 'Pi1'
+        '404':
+          description: Given if the command is entered wrong. 
+  /msg_history:
+    get:
+      summary: Get all the commands in the database.
+      description: Reads the database and gets all the commands from the database that is associated with the PI. It will return a JSON array of of The message given/the name of the pi given as a dict. 
+      responses:
+        '200':
+          description: A JSON array of message/pi name pairs represented as a dict.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Message from the database
+                  piname:
+                    type: string
+                    description: Name of the pi the message is from
+                example:
+                  'Hello' : 'Pi1'
+        '400':
+          description: Used if query parameters are given.
+        '404':
+          description: Used if the wrong path is given or spelled incorrectly.
