@@ -93,7 +93,6 @@ def trans_to_eng():
 
 
 def trans_to_code(word):
-    word = word.upper()
     for letters in word:
         if letters == ("A"):
             translated.append(A)
@@ -147,4 +146,4 @@ def trans_to_code(word):
             translated.append(Y)
         if letters == ("Z"):
             translated.append(Z)
-        receive_translations(translated)
+    receive_translations(translated)
