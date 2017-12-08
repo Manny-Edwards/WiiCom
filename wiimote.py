@@ -53,6 +53,9 @@ def getTranslation():
    return translations
 
 def receive_translations(list):
+ print('Connect Wiimote to recieve messages:')
+ print ('Please press buttons 1 + 2 on your Wiimote now ...')
+ time.sleep(1)
  try:
   wii=wii=cwiid.Wiimote()
  except RuntimeError:
