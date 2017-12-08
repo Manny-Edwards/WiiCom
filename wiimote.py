@@ -39,7 +39,7 @@ def getTranslation():
    letter=[]
    time.sleep(button_delay)
    if (buttons & cwiid.BTN_A):
-       print('Rumbling Now')
+       print('Dash inputted')
        wii.rumble = 1
        time.sleep(1)
        wii.rumble = 0
@@ -47,7 +47,7 @@ def getTranslation():
        time.sleep(button_delay)
 
    if (buttons & cwiid.BTN_B):
-       print ('Button B pressed')
+       print ('Dot inputted')
        letter.append('dot')
        time.sleep(button_delay)
    return translations
