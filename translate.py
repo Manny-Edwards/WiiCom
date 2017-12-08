@@ -88,7 +88,8 @@ def trans_to_eng():
         word = ""
         for x in translated:
             word += x
-            print(word + " will be sent.")
+    print(word + " will be sent.")
+    return word
 
 
 def trans_to_code(word):
